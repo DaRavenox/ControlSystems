@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ControlSystems.dir/main.c.o"
+  "CMakeFiles/ControlSystems.dir/tes.c.o"
   "ControlSystems.pdb"
   "ControlSystems"
 )

@@ -150,6 +150,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/main.c.s
 .PHONY : main.c.s
 
+tes.o: tes.c.o
+
+.PHONY : tes.o
+
+# target to build an object file
+tes.c.o:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.o
+.PHONY : tes.c.o
+
+tes.i: tes.c.i
+
+.PHONY : tes.i
+
+# target to preprocess a source file
+tes.c.i:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.i
+.PHONY : tes.c.i
+
+tes.s: tes.c.s
+
+.PHONY : tes.s
+
+# target to generate assembly for a file
+tes.c.s:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.s
+.PHONY : tes.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tes.o"
+	@echo "... tes.i"
+	@echo "... tes.s"
 .PHONY : help
 
 
