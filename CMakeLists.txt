@@ -3,4 +3,4 @@ project(ControlSystems C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(ControlSystems main.c hybridsysteminspector.c)
+add_executable(ControlSystems main.c hybridsysteminspector.c hybridsysteminspector.h)

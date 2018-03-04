@@ -16,28 +16,61 @@ Created by Jonas Hongisto on 2018-03-04.
 */
 
 
-#include <zconf.h>
 
-//Struct for the transitions, '-->' in the formal language. Edge is a pointer to a pointer between two states.
-typedef struct{
-    char state1;
-    char state2;
-    char generator;
+#include "hybridsysteminspector.h"
 
-} transition;
+//Read Transition systems from file
 
-//Struct for the whole transition system. Includes pointers to the lists of states, generators and transitions.
-typedef struct{
-    char* state_ptr;
-    u_int8_t number_of_states;
-
-    char* generators;
-    u_int8_t number_of_generators;
-
-    transition* transitions;
-    u_int8_t number_of_transitions;
-
-} transitionsystem;
+int initializeTS(char* file_path){
+    FILE* file_ptr = fopen(file_path, "r");
+    if(file_ptr == NULL) return -1;
 
 
+    int number_of_TS;;
+    fscanf(file_ptr,"%d",&number_of_TS);
+    transitionsystem array_of_TS[number_of_TS];
 
+    for (int counter = 0; counter < number_of_TS ; ++counter) {
+        //Read in number of states and states
+        fscanf(file_ptr,"%d",&array_of_TS[counter].number_of_states);
+        array_of_TS[counter].state_ptr = (char *) malloc(sizeof(char)*array_of_TS[counter].number_of_states);
+        for (int i = 0; i <array_of_TS[counter].number_of_states; i++) {
+            fscanf(file_ptr,"%c",&array_of_TS[counter].state_ptr[i]);
+        }
+        //Read in number of generators and generators
+        fscanf(file_ptr,"%d",&array_of_TS[counter].number_of_generators);
+        array_of_TS[counter].generator_ptr = (char *) malloc(sizeof(char)*array_of_TS[counter].number_of_states);
+        for (int i = 0; i <array_of_TS[counter].number_of_generators; i++) {
+            fscanf(file_ptr,"%c",&array_of_TS[counter].generator_ptr[i]);
+        }
+        //Read in number of transitions and transitions
+        fscanf(file_ptr,"%d",&array_of_TS[counter].number_of_transitions);
+        array_of_TS[counter].transition_ptr = (transition *) malloc(sizeof(transition)*array_of_TS[counter].number_of_transitions);
+
+        for (int i = 0; i <array_of_TS[counter].number_of_transitions; i++) {
+            fscanf(file_ptr,"%c %c %c",&array_of_TS[counter].transition_ptr[i].state1,
+                   &array_of_TS[counter].transition_ptr[i].generator,&array_of_TS[counter].transition_ptr[i].state2);
+        }
+        //Read in number of initial states and initial states
+        fscanf(file_ptr,"%d",&array_of_TS[counter].number_of_init_states);
+        array_of_TS[counter].init_state_ptr = (char *) malloc(sizeof(char)*array_of_TS[counter].number_of_init_states);
+        for (int i = 0; i <array_of_TS[counter].number_of_generators; i++) {
+            fscanf(file_ptr,"%c",&array_of_TS[counter].init_state_ptr[i]);
+        }
+        //Read in number of final states and final states
+        fscanf(file_ptr,"%d",&array_of_TS[counter].number_of_final_states);
+        array_of_TS[counter].final_state_ptr = (char *) malloc(sizeof(char)*array_of_TS[counter].number_of_final_states);
+        for (int i = 0; i <array_of_TS[counter].number_of_final_states; i++) {
+            fscanf(file_ptr,"%c",&array_of_TS[counter].final_state_ptr[i]);
+        }
+
+    }
+    return 1;
+}
+
+
+
+int isSimulation(transitionsystem T1, transitionsystem T2){
+    return 0;
+
+}

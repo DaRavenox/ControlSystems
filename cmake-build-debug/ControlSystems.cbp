@@ -81,10 +81,10 @@
 		<Unit filename="/home/jonas/git/ControlSystems/hybridsysteminspector.c">
 			<Option target="ControlSystems"/>
 		</Unit>
-		<Unit filename="/home/jonas/git/ControlSystems/main.c">
+		<Unit filename="/home/jonas/git/ControlSystems/hybridsysteminspector.h">
 			<Option target="ControlSystems"/>
 		</Unit>
-		<Unit filename="/home/jonas/git/ControlSystems/structs.h">
+		<Unit filename="/home/jonas/git/ControlSystems/main.c">
 			<Option target="ControlSystems"/>
 		</Unit>
 		<Unit filename="/home/jonas/git/ControlSystems/CMakeLists.txt">

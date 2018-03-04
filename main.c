@@ -13,11 +13,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Created by Jonas Hongisto on 2018-03-04.
 */
+#include "hybridsysteminspector.h"
 
 
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+
+    initializeTS("/home/jonas/git/ControlSystems/transition_systems.txt");
     return 0;
 }
