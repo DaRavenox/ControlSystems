@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/ControlSystems.dir/main.c.o CMakeFiles/ControlSystems.dir/tes.c.o  -o ControlSystems 
+/usr/bin/cc -g   CMakeFiles/ControlSystems.dir/main.c.o CMakeFiles/ControlSystems.dir/hybridsysteminspector.c.o  -o ControlSystems 

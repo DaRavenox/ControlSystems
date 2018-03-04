@@ -78,13 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/jonas/git/ControlSystems/hybridsysteminspector.c">
+			<Option target="ControlSystems"/>
+		</Unit>
 		<Unit filename="/home/jonas/git/ControlSystems/main.c">
 			<Option target="ControlSystems"/>
 		</Unit>
-		<Unit filename="/home/jonas/git/ControlSystems/tes.c">
-			<Option target="ControlSystems"/>
-		</Unit>
-		<Unit filename="/home/jonas/git/ControlSystems/testes.cpp">
+		<Unit filename="/home/jonas/git/ControlSystems/structs.h">
 			<Option target="ControlSystems"/>
 		</Unit>
 		<Unit filename="/home/jonas/git/ControlSystems/CMakeLists.txt">

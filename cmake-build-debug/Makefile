@@ -123,6 +123,33 @@ ControlSystems/fast:
 	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/build
 .PHONY : ControlSystems/fast
 
+hybridsysteminspector.o: hybridsysteminspector.c.o
+
+.PHONY : hybridsysteminspector.o
+
+# target to build an object file
+hybridsysteminspector.c.o:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/hybridsysteminspector.c.o
+.PHONY : hybridsysteminspector.c.o
+
+hybridsysteminspector.i: hybridsysteminspector.c.i
+
+.PHONY : hybridsysteminspector.i
+
+# target to preprocess a source file
+hybridsysteminspector.c.i:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/hybridsysteminspector.c.i
+.PHONY : hybridsysteminspector.c.i
+
+hybridsysteminspector.s: hybridsysteminspector.c.s
+
+.PHONY : hybridsysteminspector.s
+
+# target to generate assembly for a file
+hybridsysteminspector.c.s:
+	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/hybridsysteminspector.c.s
+.PHONY : hybridsysteminspector.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,33 +177,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/main.c.s
 .PHONY : main.c.s
 
-tes.o: tes.c.o
-
-.PHONY : tes.o
-
-# target to build an object file
-tes.c.o:
-	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.o
-.PHONY : tes.c.o
-
-tes.i: tes.c.i
-
-.PHONY : tes.i
-
-# target to preprocess a source file
-tes.c.i:
-	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.i
-.PHONY : tes.c.i
-
-tes.s: tes.c.s
-
-.PHONY : tes.s
-
-# target to generate assembly for a file
-tes.c.s:
-	$(MAKE) -f CMakeFiles/ControlSystems.dir/build.make CMakeFiles/ControlSystems.dir/tes.c.s
-.PHONY : tes.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ControlSystems"
+	@echo "... hybridsysteminspector.o"
+	@echo "... hybridsysteminspector.i"
+	@echo "... hybridsysteminspector.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tes.o"
-	@echo "... tes.i"
-	@echo "... tes.s"
 .PHONY : help
 
 
