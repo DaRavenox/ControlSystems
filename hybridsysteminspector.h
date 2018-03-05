@@ -48,10 +48,6 @@ typedef struct{
     int number_of_final_states;
 
 } transitionsystem;
-
-
-
-
 //--------------------------------------------
 
 
@@ -61,6 +57,7 @@ typedef struct{
 int initializeTS(char* file_path);
 int isSimulation(transitionsystem T1, transitionsystem T2);
 int readNextNonWhiteChar(FILE* file_ptr, char* destination);
+int readNextXNonWhiteChar(FILE* file_ptr, int number_of_characters, char** destination_array);
 // ----------------------------------------------
 
 #endif //CONTROLSYSTEMS_HYBRIDSYSTEMINSPECTOR_H
