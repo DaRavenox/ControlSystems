@@ -19,7 +19,9 @@ Created by Jonas Hongisto on 2018-03-04.
 #include <stdio.h>
 
 int main() {
-
+    //char a;
+    //FILE* file_ptr = fopen("/home/jonas/git/ControlSystems/transition_systems.txt","r");
+    //while(readNextNonWhiteChar(file_ptr,&a));
     initializeTS("/home/jonas/git/ControlSystems/transition_systems.txt");
     return 0;
 }

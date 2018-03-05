@@ -17,6 +17,7 @@ Created by Jonas Hongisto on 2018-03-04.
 #include <zconf.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #ifndef CONTROLSYSTEMS_HYBRIDSYSTEMINSPECTOR_H
 #define CONTROLSYSTEMS_HYBRIDSYSTEMINSPECTOR_H
@@ -59,6 +60,7 @@ typedef struct{
 
 int initializeTS(char* file_path);
 int isSimulation(transitionsystem T1, transitionsystem T2);
+int readNextNonWhiteChar(FILE* file_ptr, char* destination);
 // ----------------------------------------------
 
 #endif //CONTROLSYSTEMS_HYBRIDSYSTEMINSPECTOR_H
