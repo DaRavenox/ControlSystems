@@ -65,8 +65,10 @@ int initializeTS(char* file_path){
             readNextNonWhiteChar(file_ptr,&array_of_TS[counter].final_state_ptr[i]);
         }
     }
+    //isSimulation(array_of_TS[0],array_of_TS[2]);
     return 1;
 }
+
 
 
 int readNextXNonWhiteChar(FILE* file_ptr, int number_of_characters,char** destination_array){
@@ -88,9 +90,49 @@ int readNextNonWhiteChar(FILE* file_ptr, char* destination){
     return 1;
 }
 
+transition_map createTransitionMap(transitionsystem TS){
+    transition_map T_M;
+    T_M.keymap = (char*)malloc(CHAR_MAX* sizeof(char));
+    T_M.edgemap = (char***)malloc(TS.number_of_states* sizeof(char***));
+    for (int i = 0; i < TS.number_of_states; ++i) {
+        T_M.edgemap[i] = (char**)malloc(TS.number_of_states* sizeof(char**));
+        T_M.keymap[TS.state_ptr[i]] = (char) i;
+        for (int j = 0; j < TS.number_of_states; ++j) {
+                T_M.edgemap[i][j] = (char*)malloc(TS.number_of_generators* sizeof(char*));
+        }
+    }
+    /*for (int i = 0; i < TS.number_of_transitions; ++i) {
+
+        T_M.edgemap[TS.transition_ptr[i].state1][TS.transition_ptr[i].state2] = TS.transition_ptr[i].generator;
+    }*/
+}
+
+
 
 
 int isSimulation(transitionsystem T1, transitionsystem T2){
-    return 0;
 
+    transition* transition_from_init_T1 = (transition *) malloc(sizeof(transition)*T1.number_of_transitions);
+    transition* transition_from_init_T2 = (transition *) malloc(sizeof(transition)*T2.number_of_transitions);
+    //for (int i = 0; i < T1.number_of_init_states; ++i) {
+
+    for (int j = 0; j < T1.number_of_transitions; ++j) {
+        if(strstr((char*) T1.transition_ptr[j].state1,T1.init_state_ptr)) transition_from_init_T1[j] = T1.transition_ptr[j];
+    }
+    //}
+    //for (int i = 0; i < T2.number_of_init_states; ++i) {
+    for (int j = 0; j < T2.number_of_transitions; ++j) {
+        if(strstr((char*) T2.transition_ptr[j].state1,T2.init_state_ptr)) transition_from_init_T2[j] = T2.transition_ptr[j];
+    }
+    //}
+
+    //simulation* first_layer = matchStatesForSimulation(transition_from_init_T1,transition_from_init_T2);
+
+    return 0;
+}
+
+
+
+simulation* matchStatesForSimulation(transition** layerT1, transition** layerT2){
+    return 0;
 }
